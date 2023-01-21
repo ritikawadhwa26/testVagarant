@@ -21,8 +21,30 @@ public class PlayerHelper {
 
 	}
 	
+	public Integer getPlayerCountViaRole(Rcb team, String role) {
+		List<Player> playerList = new ArrayList<Player>();
+		playerList = team.getPlayer();
+		int count = 0;
+		for (Player player : playerList) {
+			if ((player.getRole()).equalsIgnoreCase(role))
+				count++;
+		}
+		return count;
+
+	}
+	
 	public Integer getForeignPlayers(Rcb team) {
 		return team.getPlayer().size()-getPlayerCountViaCountry(team, "India");
+		
+	}
+	
+	public Boolean checkWicketKeeperRole(Rcb team) {
+		boolean wicketKeeper = false;
+		if (getPlayerCountViaRole(team, "Wicket-keeper") >= 1)
+		{
+		wicketKeeper =true;	
+		}
+		return wicketKeeper;
 		
 	}
 

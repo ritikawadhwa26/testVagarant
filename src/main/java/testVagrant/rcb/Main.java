@@ -22,8 +22,9 @@ public class Main {
 		// JSON from file to Object
 		Rcb team = null;
 		try {
-			team = mapper.readValue(new File(
-					System.getProperty("user.dir") + File.separator + "resources" + File.separator + "TeamRCB.json"),
+			team = mapper.readValue(
+					new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"
+							+ File.separator + "java" + File.separator + "resources" + File.separator + "TeamRCB.json"),
 					Rcb.class);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
